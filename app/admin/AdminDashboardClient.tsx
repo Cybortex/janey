@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import { btn, btnPlum, btnSm, field, card } from "@/lib/ui";
-import { SITE } from "@/lib/site";
+import { btn, btnSm, field, card } from "@/lib/ui";
 
 export default function AdminDashboardClient() {
   const [authed, setAuthed] = useState<boolean | null>(null);

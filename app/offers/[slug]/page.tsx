@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Photo from "@/components/Photo";
 import { OFFERS, SITE } from "@/lib/site";
 import { btn, btnLine } from "@/lib/ui";
+import TrackOfferView from "@/components/TrackOfferView";
 
 export function generateStaticParams() { return Object.keys(OFFERS).map((slug) => ({ slug })); }
 
@@ -19,6 +20,7 @@ export default async function Offer({ params }: { params: Promise<{ slug: string
   if (!o) notFound();
   return (
     <article className="mx-auto max-w-3xl px-5 py-10">
+      <TrackOfferView slug={slug} />
       <Photo src={`offer-${slug}.jpg`} alt={o.title} priority sizes="(min-width:768px) 768px, 100vw" className="aspect-[4/3] rounded-3xl border-2 border-gold" />
       <h1 className="rule mt-8 font-display text-4xl leading-tight font-semibold md:text-6xl">{o.h}</h1>
       <p className="mt-4 text-lg text-plum/80">{o.p}</p>

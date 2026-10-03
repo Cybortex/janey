@@ -65,7 +65,8 @@ export default function BookingForm({ initialService }: { initialService?: strin
     }
   }, [date]);
 
-  const availableSlots = availabilityData?.slots || FALLBACK_TIMES.map((t) => ({ time: t, available: true }));
+  const availableSlots: { time: string; available: boolean }[] =
+    availabilityData?.slots || FALLBACK_TIMES.map((t) => ({ time: t, available: true }));
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
