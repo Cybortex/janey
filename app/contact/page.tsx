@@ -21,7 +21,6 @@ export default function Contact() {
           <h2 className="font-display text-3xl font-semibold">Find us</h2>
           <p className="mt-2 text-lg">{SITE.address}</p>
           <dl className="mt-4 grid gap-2">{HOURS.map(([d, h]) => <div key={d} className="flex justify-between border-b border-line pb-2"><dt>{d}</dt><dd>{h}</dd></div>)}</dl>
-          <Photo src="location-front.jpg" alt="Janey Radiance entrance" sizes="(min-width:768px) 50vw, 100vw" className="mt-5 aspect-[3/2] rounded-2xl border border-gold/60" />
           <a href={SITE.map} target="_blank" rel="noopener noreferrer" className={`${btnPlum} mt-4`}>Get directions</a>
         </div>
         <iframe title="Map to Janey Radiance" src={SITE.embed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="aspect-square w-full rounded-2xl border border-gold/60 md:aspect-auto md:min-h-96" />
