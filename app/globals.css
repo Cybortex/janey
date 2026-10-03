@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-plum: #3a1026;
+  --color-pink: #ff4fa0;
+  --color-rose: #d6246e;
+  --color-gold: #d4af6a;
+  --color-gold-deep: #a67c2e;
+  --color-blush: #fff1f6;
+  --color-line: #f3d2e1;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-jost), system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background-color: var(--color-blush); color: var(--color-plum); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+/* Gold line that draws in under headings */
+.rule { position: relative; padding-bottom: .7rem; }
+.rule::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 4.5rem; background: var(--color-gold); transform-origin: left; animation: draw 1s ease-out both; }
+.rule-c::after { left: 50%; margin-left: -2.25rem; transform-origin: center; }
+@keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* Slow shine sweep across the main gold button */
+.shine { position: relative; overflow: hidden; }
+.shine::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.6) 50%, transparent 65%); transform: translateX(-120%); animation: shine 5s ease-in-out 1.5s infinite; pointer-events: none; }
+@keyframes shine { to { transform: translateX(120%); } }
+
+/* Fade-up as sections scroll into view */
+.reveal { animation: rise .8s ease-out both; }
+@supports (animation-timeline: view()) { .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; } }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* Line-art lotus divider draws itself */
+.draw path { stroke-dasharray: 400; stroke-dashoffset: 400; animation: dash 2.2s ease-out .3s forwards; }
+@keyframes dash { to { stroke-dashoffset: 0; } }
+
+summary::-webkit-details-marker { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rule::after, .shine::after, .reveal { animation: none !important; }
+  .draw path { animation: none; stroke-dashoffset: 0; }
+}

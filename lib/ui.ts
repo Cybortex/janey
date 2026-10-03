@@ -1,0 +1,9 @@
+const ring = "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-plum";
+export const btn = `shine inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 font-medium text-plum transition hover:brightness-105 ${ring}`;
+export const btnGold = btn;
+export const btnSm = `inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-gold px-4 py-2 text-sm font-medium text-plum transition hover:brightness-105 ${ring}`;
+export const btnPlum = `inline-flex items-center justify-center rounded-full bg-plum px-6 py-3 font-medium text-blush transition hover:bg-rose ${ring}`;
+export const btnLine = `inline-flex items-center justify-center rounded-full border border-current px-6 py-3 font-medium transition hover:bg-black/5 ${ring}`;
+export const field = "mt-1 w-full rounded-xl border border-line bg-white px-3 py-3";
+export const card = "rounded-2xl border border-gold/60 bg-white";
+export const wrap = "mx-auto w-full max-w-6xl px-5";
