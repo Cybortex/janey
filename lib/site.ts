@@ -5,7 +5,7 @@ export const SITE = {
   slogan: "Get to glow differently with us",
   address: "164 Herbert Macaulay Way, Adekunle Sabo, Yaba, Lagos",
   phones: [{ label: "0810 554 9826", tel: "+2348105549826" }],
-  wa: "https://wa.me/2348105549826",
+  wa: "https://api.whatsapp.com/send?phone=2348105549826",
   ig: "", // TODO: add the Instagram profile URL
   fb: "", // TODO: add the Facebook page URL (leave "" to hide)
   map: "https://www.google.com/maps/search/?api=1&query=164+Herbert+Macaulay+Way+Adekunle+Yaba+Lagos",

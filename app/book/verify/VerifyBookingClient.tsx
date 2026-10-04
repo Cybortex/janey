@@ -41,7 +41,7 @@ export default function VerifyBookingClient() {
   }, [ref]);
 
   const waMsg = `Hello Janey Radiance, I completed my booking deposit for reference ${ref}.`;
-  const waUrl = `${SITE.wa}?text=${encodeURIComponent(waMsg)}`;
+  const waUrl = `${SITE.wa}&text=${encodeURIComponent(waMsg)}`;
 
   return (
     <section className="mx-auto max-w-lg px-5 py-16 text-center">

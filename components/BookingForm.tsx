@@ -114,7 +114,7 @@ export default function BookingForm({ initialService }: { initialService?: strin
         // Fallback reference code and WhatsApp confirmation
         const randomRef = `JR-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
         const msg = `Hello Janey Radiance, I'd like to book ${selectedServiceName} on ${date} at ${time}. Ref: ${randomRef}. Name: ${name}. Phone: ${phone}.`;
-        window.open(`${SITE.wa}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+        window.open(`${SITE.wa}&text=${encodeURIComponent(msg)}`, "_blank", "noopener");
         setConfirmedBooking({
           reference: randomRef,
           isSunday: sunday,
@@ -131,7 +131,7 @@ export default function BookingForm({ initialService }: { initialService?: strin
   // After booking screen: WhatsApp confirmation fallback & Paystack deposit option
   if (confirmedBooking) {
     const waMessage = `Hello Janey Radiance, my booking reference is ${confirmedBooking.reference} for ${selectedServiceName} on ${date} at ${time}. Name: ${name}.`;
-    const waUrl = `${SITE.wa}?text=${encodeURIComponent(waMessage)}`;
+    const waUrl = `${SITE.wa}&text=${encodeURIComponent(waMessage)}`;
 
     return (
       <div className="rounded-2xl border border-gold/70 bg-white p-6 md:p-8 max-w-lg shadow-sm">
