@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 import { ConvexHttpClient } from "convex/browser";
-import { internal } from "@/convex/_generated/api";
+import { api } from "@/convex/_generated/api";
 
 export async function POST(req: NextRequest) {
   const secretKey = process.env.PAYSTACK_SECRET_KEY;
@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
     if (convexUrl) {
       const client = new ConvexHttpClient(convexUrl);
-      await client.mutation(internal.admin.updateDepositStatus, {
+      await client.mutation(api.admin.updateDepositStatus, {
         reference: bookingReference,
         paystackReference: data.id?.toString() ?? bookingReference,
         paid: data.status === "success",

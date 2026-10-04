@@ -11,7 +11,7 @@ export const getBookingByRef = query({
   },
 });
 
-export const updateDepositStatus = internalMutation({
+export const updateDepositStatus = mutation({
   args: {
     reference: v.string(),
     paystackReference: v.string(),

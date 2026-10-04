@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyPaystackTransaction } from "@/lib/paystack";
 import { ConvexHttpClient } from "convex/browser";
-import { internal } from "@/convex/_generated/api";
+import { api } from "@/convex/_generated/api";
 
 export async function GET(req: NextRequest) {
   try {
@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
       const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
       if (convexUrl) {
         const client = new ConvexHttpClient(convexUrl);
-        await client.mutation(internal.admin.updateDepositStatus, {
+        await client.mutation(api.admin.updateDepositStatus, {
           reference,
           paystackReference: paystackResult.data.id?.toString() ?? reference,
           paid: true,

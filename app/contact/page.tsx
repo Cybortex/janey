@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Photo from "@/components/Photo";
 import { HOURS, SITE } from "@/lib/site";
 import { btn, btnLine, btnPlum, wrap } from "@/lib/ui";
 
