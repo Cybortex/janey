@@ -7,7 +7,7 @@ import StickyBar from "@/components/StickyBar";
 import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 import { SITE } from "@/lib/site";
 
-const display = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"], style: ["normal", "italic"], variable: "--font-cormorant" });
+const display = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"], variable: "--font-cormorant" });
 const sans = Jost({ subsets: ["latin"], variable: "--font-jost" });
 
 export const metadata: Metadata = {
